@@ -11,27 +11,20 @@ st.set_page_config(
     layout="centered"
 )
 
-# Cute Custom Styling (Fixed Form Buttons, Radio Accents, and Dark Overrides)
+# Cute Custom Styling
 st.markdown("""
     <style>
-    /* Global background override for consistency */
     .main, .stApp {
         background-color: #fff0f5 !important;
         color: #4a2e35 !important;
     }
-    
-    /* Force crisp headers */
     h1, h2, h3, h4, h5, h6 {
         color: #d81b60 !important;
     }
-    
-    /* Force visible labels, paragraphs, and text */
     p, label, span {
         color: #4a2e35 !important;
         font-weight: 500;
     }
-    
-    /* Ensure radio button text and container backgrounds stay clean and transparent */
     div.row-widget.stRadio div[role="radiogroup"] label {
         color: #4a2e35 !important;
         background-color: transparent !important;
@@ -40,13 +33,9 @@ st.markdown("""
         color: #4a2e35 !important;
         background-color: transparent !important;
     }
-    
-    /* Fix radio button selection dot color (makes them pink instead of solid black) */
     input[type="radio"] {
         accent-color: #ff69b4 !important;
     }
-    
-    /* Standard Buttons */
     .stButton>button {
         background-color: #ff69b4 !important;
         color: white !important;
@@ -60,8 +49,6 @@ st.markdown("""
         background-color: #ff1493 !important;
         color: white !important;
     }
-    
-    /* Form Submit Buttons (Fixes the black submit button block) */
     div.stFormSubmitButton > button, button[type="submit"] {
         background-color: #ff69b4 !important;
         color: white !important;
@@ -75,8 +62,6 @@ st.markdown("""
         background-color: #ff1493 !important;
         color: white !important;
     }
-    
-    /* Results feedback cards - forced clean white background with dark readable text */
     .competency-box {
         background-color: #ffffff !important;
         color: #333333 !important;
@@ -90,8 +75,6 @@ st.markdown("""
         color: #333333 !important;
         background-color: transparent !important;
     }
-    
-    /* Bloom tags */
     .bloom-tag {
         background-color: #fce4ec !important;
         color: #c2185b !important;
@@ -100,8 +83,6 @@ st.markdown("""
         font-size: 0.85em;
         font-weight: bold;
     }
-    
-    /* Part B warning banner */
     .part-b-warning {
         background-color: #ffebee !important;
         color: #c62828 !important;
@@ -112,8 +93,6 @@ st.markdown("""
         margin-bottom: 20px;
         border: 1px solid #ffcdd2;
     }
-    
-    /* Break screen box */
     .break-box {
         background-color: #ffffff !important;
         color: #333333 !important;
@@ -126,8 +105,6 @@ st.markdown("""
     .break-box h3, .break-box p {
         color: #333333 !important;
     }
-    
-    /* Timer box */
     .timer-box {
         background-color: #e8f5e9 !important;
         color: #2e7d32 !important;
@@ -142,10 +119,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# FULL 60-QUESTION MASTER BANK (30 Part A + 30 Part B)
+# EXPANDED MASTER QUESTION BANK (Randomized fresh selection every test!)
 MASTER_QUESTION_BANK = [
     # ==========================================
-    # PART A: FOUNDATIONAL & ETHICAL APPLICATIONS (30 Questions)
+    # PART A: FOUNDATIONAL & ETHICAL APPLICATIONS
     # ==========================================
     {
         "section": "Part A",
@@ -159,7 +136,7 @@ MASTER_QUESTION_BANK = [
         "answer": 1,
         "competency": "Competency 3: Establishes and Maintains Agreements",
         "bloom": "Evaluating",
-        "feedback": "Spot on, Nana! PCC coaches manage time and focus by partnering with the client rather than taking control."
+        "feedback": "Spot on! PCC coaches manage time and focus by partnering with the client rather than taking control."
     },
     {
         "section": "Part A",
@@ -567,9 +544,51 @@ MASTER_QUESTION_BANK = [
         "bloom": "Applying",
         "feedback": "Spot on! Clear agreements keep coaching focused and impactful."
     },
+    {
+        "section": "Part A",
+        "question": "An executive sponsor contacts Nana outside of sessions asking for a report on the client's emotional stability. What is the PCC-level action?",
+        "options": [
+            "A) Send a detailed psychological profile.",
+            "B) Reiterate the confidentiality agreement established upfront and encourage the sponsor to discuss observations directly with the client.",
+            "C) Ignore the sponsor completely.",
+            "D) Agree to report back only if paid extra."
+        ],
+        "answer": 1,
+        "competency": "Competency 1 & 3: Ethics & Agreements",
+        "bloom": "Evaluating",
+        "feedback": "Correct! Ethical practice strictly honors stakeholder confidentiality agreements."
+    },
+    {
+        "section": "Part A",
+        "question": "If a client begins discussing a past medical diagnosis during a session, how should Nana maintain professional boundaries?",
+        "options": [
+            "A) Prescribe natural remedies.",
+            "B) Acknowledge the experience while keeping the focus on coaching goals, knowing when to suggest external professional care if needed.",
+            "C) Investigate their medical records.",
+            "D) Stop talking entirely."
+        ],
+        "answer": 1,
+        "competency": "Competency 1: Demonstrates Ethical Practice",
+        "bloom": "Applying",
+        "feedback": "Spot on! Coaches honor the boundary between coaching and clinical healthcare."
+    },
+    {
+        "section": "Part A",
+        "question": "How should Nana handle silence after asking a powerful question?",
+        "options": [
+            "A) Jump in immediately with a second question if the silence lasts more than 3 seconds.",
+            "B) Hold the silence comfortably, allowing the client time to reflect and process their internal thoughts.",
+            "C) Check your phone to pass the time.",
+            "D) Tell the client they must answer quickly."
+        ],
+        "answer": 1,
+        "competency": "Competency 5 & 7: Presence & Awareness",
+        "bloom": "Applying",
+        "feedback": "Brilliant! Silence is often where the deepest client breakthroughs happen."
+    },
 
     # ==========================================
-    # PART B: ADVANCED CASE SCENARIOS (30 Questions)
+    # PART B: ADVANCED CASE SCENARIOS
     # ==========================================
     {
         "section": "Part B",
@@ -825,7 +844,7 @@ MASTER_QUESTION_BANK = [
     },
     {
         "section": "Part B",
-        "question": "[Complex Case] A client is paralyzed by perfectionism and refuses to take any action unless it is flawless. How should Nana partner with them?",
+        "question": "[Complex Case] A client is fearful of making a wrong decision and asks Nana to make the choice for them. How should Nana partner with them?",
         "options": [
             "A) Tell them perfectionism is stupid and order them to move faster.",
             "B) Partner with the client to explore their relationship with perfectionism and design small, experimental steps that embrace learning over flawlessness.",
@@ -937,20 +956,6 @@ MASTER_QUESTION_BANK = [
     },
     {
         "section": "Part B",
-        "question": "[Complex Case] A client is fearful of making a wrong decision and asks Nana to make the choice for them. How should Nana respond?",
-        "options": [
-            "A) Make the choice for them.",
-            "B) Partner with the client to examine their decision-making process, values, and trust in themselves.",
-            "C) Flip a coin.",
-            "D) Tell them they are incompetent."
-        ],
-        "answer": 1,
-        "competency": "Competency 2 & 7: Mindset & Awareness",
-        "bloom": "Applying",
-        "feedback": "Spot on! Coaches build client resourcefulness rather than acting as decision-makers."
-    },
-    {
-        "section": "Part B",
         "question": "[Complex Case] A client completes their action items with resentment, stating they felt forced by Nana. What went wrong under Competency 8?",
         "options": [
             "A) The client is just lazy.",
@@ -990,12 +995,25 @@ MASTER_QUESTION_BANK = [
         "competency": "Competency 5: Maintains Presence",
         "bloom": "Evaluating",
         "feedback": "Masterclass! Maintaining presence requires self-management and honesty about one's energetic capacity."
+    },
+    {
+        "section": "Part B",
+        "question": "[Complex Case] A client brings a personal conflict to coaching that involves another employee who is also being coached by Nana. How does Nana handle this ethical dilemma?",
+        "options": [
+            "A) Share details from the other employee's sessions to help resolve the issue.",
+            "B) Maintain absolute confidentiality for both individuals, declining to cross-pollinate private information while coaching each client on their individual perspective.",
+            "C) Drop both clients immediately.",
+            "D) Judge who is right and tell them how to fix it."
+        ],
+        "answer": 1,
+        "competency": "Competency 1: Demonstrates Ethical Practice",
+        "bloom": "Evaluating",
+        "feedback": "Spot on! Managing multiple clients within the same organization requires absolute firewall confidentiality."
     }
 ]
 
 def load_nana_image():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    # Expanded list to look for both .jpg and .jpeg in various capitalizations
     possible_names = [
         "nana.jpg", "Nana.jpg", "NANA.JPG", "nana.JPG", 
         "nana.jpeg", "Nana.jpeg", "NANA.JPEG", "nana.JPEG"
@@ -1012,16 +1030,17 @@ def load_nana_image():
 
 def main():
     st.title("💖 Nana's Official ICF Exam Simulator 💖")
-    st.markdown("<h4 style='text-align: center; color: #880e4f;'>Official 60-Question Mock Test (30 Part A / 30 Part B) • Fully Styled & Fixed! 🚀✨</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 style='text-align: center; color: #880e4f;'>Expanded Dynamic Question Bank (Randomized Shuffled Gauntlet) 🚀✨</h4>", unsafe_allow_html=True)
     st.markdown("---")
 
-    # Initialize Session States
+    # Initialize Session States & Randomize Fresh Questions on Launch/Retake
     if "stage" not in st.session_state:
         st.session_state.stage = "part_a"
-    if "part_a_q" not in st.session_state:
+        
         part_a_pool = [q for q in MASTER_QUESTION_BANK if q["section"] == "Part A"]
         part_b_pool = [q for q in MASTER_QUESTION_BANK if q["section"] == "Part B"]
         
+        # Deep shuffle every single time so she gets a brand new test experience
         random.shuffle(part_a_pool)
         random.shuffle(part_b_pool)
         
@@ -1062,7 +1081,7 @@ def main():
                 user_answers.append(choice)
                 st.markdown("---")
             
-            submit_a = st.form_submit_button("Submit Part A & Take Scheduled Break ☕️")
+            submit_a = st.form_submit_button("Submit Part A & Take Scheduled Break ☕")
 
             if submit_a:
                 if any(ans is None for ans in user_answers):
@@ -1092,7 +1111,7 @@ def main():
     # --- PART B (Section 2: 30 Questions) ---
     elif st.session_state.stage == "part_b":
         st.markdown(f"<div class='timer-box'>⏳ Simulated Exam Time Remaining: {hours_left:02d}:{minutes_left:02d}:{seconds_left:02d} | Section 2: Part B (30 Questions)</div>", unsafe_allow_html=True)
-        st.markdown("<div class='part-b-warning'>⚠️ Part B Notice: These are complex, multi-variable scenarios requiring rigorous PCC evaluation. Think deeply, Nana!</div>", unsafe_allow_html=True)
+        st.markdown("<div class='part-b-warning'>⚠️️ Part B Notice: These are complex, multi-variable scenarios requiring rigorous PCC evaluation. Think deeply, Nana!</div>", unsafe_allow_html=True)
         
         with st.form("part_b_form"):
             user_answers = []
@@ -1178,7 +1197,7 @@ def main():
                 </div>
                 """, unsafe_allow_html=True)
 
-        if st.button("🔄 Retake Full Exam (New Shuffled Questions), Nana!"):
+        if st.button("🔄 Retake Full Exam (Pulls a Brand New Shuffled Question Gauntlet!), Nana!"):
             for key in list(st.session_state.keys()):
                 del st.session_state[key]
             st.rerun()
